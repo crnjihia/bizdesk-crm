@@ -27,7 +27,7 @@ const TENANT_MODELS = ['Client', 'Invoice', 'ActivityLog', 'Membership'];
  * Automatically injects `where: { organizationId: currentOrgId }` into queries
  * and sets `data.organizationId = currentOrgId` on creation.
  */
-export function tenantMiddleware(params: any, next: (args: any) => any) {
+export function tenantMiddleware(params: any, next: (_nextParams: any) => any) {
   const orgId = getCurrentOrgId();
 
   if (!orgId || !TENANT_MODELS.includes(params.model)) {

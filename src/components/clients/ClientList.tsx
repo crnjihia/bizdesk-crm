@@ -12,7 +12,7 @@ interface Client {
 }
 
 export default function ClientList({ orgSlug, initialClients }: { orgSlug: string; initialClients: Client[] }) {
-  const [clients, setClients] = useState<Client[]>(initialClients);
+  const [clients] = useState<Client[]>(initialClients);
   const [search, setSearch] = useState('');
 
   const filtered = clients.filter(

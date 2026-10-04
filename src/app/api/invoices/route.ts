@@ -4,7 +4,7 @@ import { invoiceSchema } from '@/lib/validators/invoice';
 import { InvoiceService } from '@/server/services/invoice.service';
 import { cookies } from 'next/headers';
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   const cookieStore = cookies();
   let orgId = cookieStore.get('orgId')?.value;
   if (!orgId) {

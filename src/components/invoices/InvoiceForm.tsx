@@ -107,6 +107,18 @@ export default function InvoiceForm({ orgSlug, clients }: Props) {
         </button>
       </div>
 
+      <div>
+        <label className="block text-xs uppercase text-slate-400 mb-1">Notes / Payment Terms</label>
+        <textarea
+          name="notes"
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder="e.g. Lipa na M-Pesa Buy Goods Till 123456 or Bank Transfer..."
+          rows={2}
+          className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded text-slate-100 text-sm focus:border-emerald-500"
+        />
+      </div>
+
       <div className="flex justify-between items-center pt-4 border-t border-slate-800">
         <div className="text-sm text-slate-400">Total: <strong className="text-emerald-400 font-mono text-lg">KES {total.toLocaleString()}</strong></div>
         <button type="submit" disabled={loading} className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-medium text-sm transition">

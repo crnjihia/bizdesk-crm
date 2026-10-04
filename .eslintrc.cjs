@@ -6,6 +6,7 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
   },
+  ignorePatterns: ['**/*.d.ts', '.next/**', 'node_modules/**'],
 };

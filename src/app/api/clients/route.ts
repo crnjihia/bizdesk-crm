@@ -3,7 +3,7 @@ import prisma from '@/lib/prisma';
 import { clientSchema } from '@/lib/validators/client';
 import { cookies } from 'next/headers';
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   const cookieStore = cookies();
   const orgId = cookieStore.get('orgId')?.value;
   if (!orgId) return NextResponse.json({ error: 'Org context required' }, { status: 400 });
