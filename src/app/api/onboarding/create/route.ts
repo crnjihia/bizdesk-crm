@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     // Fallback for test / dev environments
     if (!userEmail) {
-      userEmail = 'test-owner@biashara.co.ke';
+      userEmail = 'test-owner@bizdesk.co.ke';
     }
 
     let user = await prisma.user.findUnique({

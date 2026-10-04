@@ -14,7 +14,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
     Resend({
       apiKey: process.env.RESEND_API_KEY || 're_mock_key',
-      from: process.env.EMAIL_FROM || 'invoicing@biashara.co.ke',
+      from: process.env.EMAIL_FROM || 'invoicing@bizdesk.co.ke',
     }),
   ],
   pages: {

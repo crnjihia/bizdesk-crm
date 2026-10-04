@@ -18,7 +18,7 @@ export default function InvoicePdfView({ invoice }: Props) {
     <div className="bg-white text-slate-900 p-8 rounded-xl shadow-lg border border-slate-200 max-w-2xl mx-auto space-y-6">
       <div className="flex justify-between border-b border-emerald-600 pb-4">
         <div>
-          <h2 className="text-2xl font-bold text-emerald-800">Biashara Invoice</h2>
+          <h2 className="text-2xl font-bold text-emerald-800">BizDesk Invoice</h2>
           <p className="text-xs text-slate-500">Official Kenyan SME Tax Invoice</p>
         </div>
         <div className="text-right">

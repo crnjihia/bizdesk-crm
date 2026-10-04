@@ -51,7 +51,7 @@ export default function OnboardingPage() {
             Step 1 of 1
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-white">Create your Organization</h1>
-          <p className="text-sm text-slate-400">Set up your business workspace on Biashara SaaS</p>
+          <p className="text-sm text-slate-400">Set up your business workspace on BizDesk CRM</p>
         </div>
 
         {error && (
@@ -81,7 +81,7 @@ export default function OnboardingPage() {
               Workspace URL Slug
             </label>
             <div className="flex items-center rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 text-sm text-slate-400">
-              <span className="text-slate-500">biashara.co.ke/org/</span>
+              <span className="text-slate-500">bizdesk.co.ke/org/</span>
               <input
                 id="slug"
                 type="text"

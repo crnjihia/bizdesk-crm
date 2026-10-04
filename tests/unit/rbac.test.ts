@@ -23,7 +23,7 @@ describe('RBAC requireRole', () => {
 
   it('allows owner to perform owner/admin actions', async () => {
     vi.mocked(auth).mockResolvedValueOnce({
-      user: { id: 'usr-1', email: 'owner@biashara.co.ke' },
+      user: { id: 'usr-1', email: 'owner@bizdesk.co.ke' },
       expires: '2099-01-01',
     } as any);
 
@@ -42,7 +42,7 @@ describe('RBAC requireRole', () => {
 
   it('rejects member attempting owner actions with Forbidden error', async () => {
     vi.mocked(auth).mockResolvedValueOnce({
-      user: { id: 'usr-2', email: 'staff@biashara.co.ke' },
+      user: { id: 'usr-2', email: 'staff@bizdesk.co.ke' },
       expires: '2099-01-01',
     } as any);
 
@@ -63,7 +63,7 @@ describe('RBAC requireRole', () => {
 
   it('hasRole returns true or false correctly', async () => {
     vi.mocked(auth).mockResolvedValue({
-      user: { id: 'usr-1', email: 'owner@biashara.co.ke' },
+      user: { id: 'usr-1', email: 'owner@bizdesk.co.ke' },
       expires: '2099-01-01',
     } as any);
 

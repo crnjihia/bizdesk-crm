@@ -23,7 +23,7 @@ export default function Sidebar({ slug }: { slug: string }) {
             B
           </div>
           <div>
-            <span className="font-bold text-white text-sm block">Biashara SaaS</span>
+            <span className="font-bold text-white text-sm block">BizDesk CRM</span>
             <span className="text-[10px] text-emerald-400 font-mono">KENYA EDITION</span>
           </div>
         </div>

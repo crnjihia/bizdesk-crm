@@ -22,7 +22,7 @@ export async function POST(request: Request) {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: `Biashara SaaS - ${planName}`,
+              name: `BizDesk CRM - ${planName}`,
               description: 'Multi-tenant invoicing & CRM for Kenyan SMEs',
             },
             unit_amount: priceAmount,

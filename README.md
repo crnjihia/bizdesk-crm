@@ -1,11 +1,11 @@
-# Biashara SaaS 🇰🇪
+# BizDesk CRM 🇰🇪
 
-[![CI](https://github.com/your-org/biashara-saas/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/biashara-saas/actions/workflows/ci.yml)
+[![CI](https://github.com/your-org/bizdesk-crm/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/bizdesk-crm/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript Strict](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14_App_Router-black.svg)](https://nextjs.org/)
 
-**Biashara SaaS** is a production-grade multi-tenant CRM and invoicing platform engineered specifically for Kenyan SMEs and African growing enterprises. It combines client relationship management with M-Pesa linked invoicing, automated overdue detection, KES currency calculations, Stripe subscription billing, and CSV audit exports.
+**BizDesk CRM** is a production-grade multi-tenant CRM and invoicing platform engineered specifically for Kenyan SMEs and African growing enterprises. It combines client relationship management with M-Pesa linked invoicing, automated overdue detection, KES currency calculations, Stripe subscription billing, and CSV audit exports.
 
 ---
 
@@ -52,7 +52,7 @@ flowchart TD
 
 ## 🏢 Multi-Tenancy Architecture
 
-Biashara SaaS enforces **hard multi-tenancy isolation** at the database abstraction layer:
+BizDesk CRM enforces **hard multi-tenancy isolation** at the database abstraction layer:
 1. **Per-Request Context**: Uses Node's `AsyncLocalStorage` to store the active tenant ID (`organizationId`).
 2. **Prisma Middleware**: Intercepts every query on tenant-scoped models (`Client`, `Invoice`, `ActivityLog`, `Membership`).
 3. **Automatic Query Mutation**:
@@ -89,8 +89,8 @@ Permissions are scoped per-organization:
 ### Installation
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-org/biashara-saas.git
-cd biashara-saas
+git clone https://github.com/your-org/bizdesk-crm.git
+cd bizdesk-crm
 
 # 2. Install dependencies
 npm install
@@ -116,13 +116,13 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 | Variable | Description | Example |
 | :--- | :--- | :--- |
-| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@localhost:5432/biashara` |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@localhost:5433/biashara` |
 | `NEXTAUTH_SECRET` | Secret key for JWT encryption | `openssl rand -base64 32` |
 | `NEXTAUTH_URL` | Canonical app URL | `http://localhost:3000` |
 | `GOOGLE_CLIENT_ID` | Google OAuth Client ID | `your-google-client-id` |
 | `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | `your-google-client-secret` |
 | `RESEND_API_KEY` | Resend API key for magic links & invoices | `re_12345678` |
-| `EMAIL_FROM` | Default sender email | `invoices@biashara.co.ke` |
+| `EMAIL_FROM` | Default sender email | `invoices@bizdesk.co.ke` |
 | `STRIPE_SECRET_KEY` | Stripe secret key for subscriptions | `sk_test_...` |
 | `STRIPE_WEBHOOK_SECRET` | Stripe webhook verification secret | `whsec_...` |
 
@@ -144,9 +144,9 @@ npm run test:e2e
 
 | Overview Dashboard | Invoice Creation & Line Items |
 | :---: | :---: |
-| ![Dashboard Placeholder](https://placehold.co/600x350/0f172a/10b981?text=Biashara+Dashboard) | ![Invoice Creation](https://placehold.co/600x350/0f172a/10b981?text=Invoice+Line+Items) |
+| ![Dashboard Placeholder](https://placehold.co/600x350/0f172a/10b981?text=BizDesk+Dashboard) | ![Invoice Creation](https://placehold.co/600x350/0f172a/10b981?text=Invoice+Line+Items) |
 
 ---
 
 ## 📄 License
-MIT © 2026 Biashara SaaS. Built for Kenyan SMEs.
+MIT © 2026 BizDesk CRM. Built for Kenyan SMEs.

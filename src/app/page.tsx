@@ -5,7 +5,7 @@ export default function HomePage() {
     <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-slate-950 text-slate-100">
       <div className="max-w-3xl text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm font-medium">
-          🇰🇪 Biashara SaaS Platform
+          🇰🇪 BizDesk CRM Platform
         </div>
         <h1 className="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-emerald-400 bg-clip-text text-transparent">
           Modern Invoicing & CRM for Kenyan Enterprises

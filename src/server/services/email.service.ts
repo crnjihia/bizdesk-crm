@@ -16,7 +16,7 @@ export class EmailService {
 
     try {
       const response = await resend.emails.send({
-        from: process.env.EMAIL_FROM || 'invoices@biashara.co.ke',
+        from: process.env.EMAIL_FROM || 'invoices@bizdesk.co.ke',
         to: invoice.client.email,
         subject: `Invoice ${invoice.number} from ${invoice.organization.name}`,
         html: `

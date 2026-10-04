@@ -24,7 +24,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md p-8 rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl space-y-6">
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-            Biashara SaaS
+            BizDesk CRM
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-white">Sign in to your account</h1>
           <p className="text-sm text-slate-400">Access your business dashboard and invoices</p>

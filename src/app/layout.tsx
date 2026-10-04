@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Biashara SaaS | Multi-Tenant SME Invoicing & CRM',
+  title: 'BizDesk CRM | Multi-Tenant SME Invoicing & CRM',
   description: 'Enterprise-grade CRM and M-Pesa linked invoicing for Kenyan SMEs',
 };
 

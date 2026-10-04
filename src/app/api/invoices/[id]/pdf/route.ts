@@ -39,7 +39,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
   <div class="header">
     <div>
       <div class="title">${invoice.organization.name}</div>
-      <div class="meta">Kenya SME Invoicing System</div>
+      <div class="meta">BizDesk CRM - Kenya SME Invoicing System</div>
     </div>
     <div style="text-align: right;">
       <h2>INVOICE</h2>
