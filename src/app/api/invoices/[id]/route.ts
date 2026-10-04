@@ -1,16 +1,16 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
-export async function GET(request: Request, { params }: { params: { invoiceId: string } }) {
+export async function GET(request: Request, { params }: { params: { id: string } }) {
   const invoice = await prisma.invoice.findUnique({
-    where: { id: params.invoiceId },
+    where: { id: params.id },
     include: { client: true, lines: true, payments: true },
   });
   if (!invoice) return NextResponse.json({ error: 'Invoice not found' }, { status: 404 });
   return NextResponse.json(invoice);
 }
 
-export async function PATCH(request: Request, { params }: { params: { invoiceId: string } }) {
+export async function PATCH(request: Request, { params }: { params: { id: string } }) {
   try {
     const body = await request.json();
     const status = body.status || body.data?.status;
@@ -20,7 +20,7 @@ export async function PATCH(request: Request, { params }: { params: { invoiceId:
     }
 
     const updated = await prisma.invoice.update({
-      where: { id: params.invoiceId },
+      where: { id: params.id },
       data: { status: status as any },
       include: { client: true, lines: true },
     });

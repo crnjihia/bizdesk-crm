@@ -56,7 +56,7 @@ describe('RBAC requireRole', () => {
   });
 
   it('rejects unauthenticated requests', async () => {
-    vi.mocked(auth).mockResolvedValueOnce(null);
+    vi.mocked(auth).mockResolvedValueOnce(null as any);
 
     await expect(requireRole('org-1', ['owner', 'admin'])).rejects.toThrow('Unauthenticated');
   });
