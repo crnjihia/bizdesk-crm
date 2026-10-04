@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/your-org/bizdesk-crm/actions/workflows/ci.yml"><img src="https://github.com/your-org/bizdesk-crm/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="https://github.com/your-org/bizdesk-crm/actions/workflows/ci.yml"><img src="https://github.com/crnjihia/bizdesk-crm/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
   <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-14_App_Router-black?logo=next.js" alt="Next.js 14" /></a>
   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript" alt="TypeScript" /></a>
   <a href="https://www.prisma.io/"><img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" alt="Prisma" /></a>
@@ -135,7 +135,7 @@ Permissions are strictly scoped per-organization:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-org/bizdesk-crm.git
+git clone https://github.com/crnjihia/bizdesk-crm.git
 cd bizdesk-crm
 
 # 2. Install dependencies
@@ -224,7 +224,7 @@ bizdesk-crm/
 
 ## 🤝 Contributing
 
-We welcome contributions! Please review [CONTRIBUTING.md](CONTRIBUTING.md) and our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before submitting a pull request.
+We welcome contributions! Please review [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
 
 ---
 

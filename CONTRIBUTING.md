@@ -8,7 +8,7 @@ Thank you for your interest in contributing to **BizDesk CRM**! We are building 
 1. Fork the repository on GitHub.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/<your-username>/bizdesk-crm.git
+   git clone https://github.com/crnjihia/bizdesk-crm.git
    cd bizdesk-crm
    ```
 
