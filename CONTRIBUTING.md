@@ -1,6 +1,6 @@
 # Contributing to BizDesk CRM
 
-Thank you for your interest in contributing to **BizDesk CRM**! We are building the premier open-source CRM and invoicing platform for Kenyan SMEs and African businesses.
+Thank you for your interest in contributing to **BizDesk CRM**! I am building the premier open-source CRM and invoicing platform for Kenyan SMEs and African businesses.
 
 ## 🛠 Development Workflow
 
@@ -51,7 +51,7 @@ Before opening a pull request, ensure all checks pass:
 
 ## 📝 Commit Conventions
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+I follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 - `feat:` New features
 - `fix:` Bug fixes
 - `docs:` Documentation updates
