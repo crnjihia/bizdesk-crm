@@ -94,32 +94,32 @@ BizDesk CRM enforces **zero-trust multi-tenancy isolation** at the database laye
 
 Permissions are strictly scoped per-organization:
 
-| Feature / Action | Owner | Admin | Member |
-| :--- | :---: | :---: | :---: |
-| View Dashboard & Reports | ✅ | ✅ | ✅ |
-| Manage Clients (CRUD & Archive) | ✅ | ✅ | View Only |
-| Create & Issue Invoices | ✅ | ✅ | ✅ |
-| Record M-Pesa Settlements | ✅ | ✅ | ✅ |
-| Manage Team Seats & Invites | ✅ | ✅ | ❌ |
-| Upgrade Subscription / Billing Portal | ✅ | ❌ | ❌ |
-| Bulk CSV Export (Pro/Enterprise) | ✅ | ✅ | ❌ |
-| Delete Organization | ✅ | ❌ | ❌ |
+| Feature / Action                      | Owner | Admin |  Member   |
+| :------------------------------------ | :---: | :---: | :-------: |
+| View Dashboard & Reports              |  ✅   |  ✅   |    ✅     |
+| Manage Clients (CRUD & Archive)       |  ✅   |  ✅   | View Only |
+| Create & Issue Invoices               |  ✅   |  ✅   |    ✅     |
+| Record M-Pesa Settlements             |  ✅   |  ✅   |    ✅     |
+| Manage Team Seats & Invites           |  ✅   |  ✅   |    ❌     |
+| Upgrade Subscription / Billing Portal |  ✅   |  ❌   |    ❌     |
+| Bulk CSV Export (Pro/Enterprise)      |  ✅   |  ✅   |    ❌     |
+| Delete Organization                   |  ✅   |  ❌   |    ❌     |
 
 ---
 
 ## 🛠 Tech Stack
 
-| Domain | Technology |
-| :--- | :--- |
-| **Framework** | Next.js 14 (App Router, Server Components & Actions) |
-| **Language** | TypeScript 5 (Strict Mode) |
-| **Styling** | Tailwind CSS + Lucide Icons + shadcn/ui principles |
-| **Database** | PostgreSQL 16 via Prisma ORM |
-| **Authentication** | NextAuth v5 (Auth.js) — Google OAuth & Magic Link |
-| **Billing** | Stripe Subscriptions + Idempotent Webhook Handler |
-| **Charts** | Recharts (Responsive Area and Donut Charts) |
-| **Testing** | Vitest (Unit) + Playwright (E2E) |
-| **Containerization** | Docker + docker-compose |
+| Domain               | Technology                                           |
+| :------------------- | :--------------------------------------------------- |
+| **Framework**        | Next.js 14 (App Router, Server Components & Actions) |
+| **Language**         | TypeScript 5 (Strict Mode)                           |
+| **Styling**          | Tailwind CSS + Lucide Icons + shadcn/ui principles   |
+| **Database**         | PostgreSQL 16 via Prisma ORM                         |
+| **Authentication**   | NextAuth v5 (Auth.js) — Google OAuth & Magic Link    |
+| **Billing**          | Stripe Subscriptions + Idempotent Webhook Handler    |
+| **Charts**           | Recharts (Responsive Area and Donut Charts)          |
+| **Testing**          | Vitest (Unit) + Playwright (E2E)                     |
+| **Containerization** | Docker + docker-compose                              |
 
 ---
 
@@ -164,17 +164,17 @@ Visit [http://localhost:3000](http://localhost:3000) to open the application.
 
 ## ⚙️ Environment Configuration
 
-| Variable | Description | Default / Example |
-| :--- | :--- | :--- |
-| `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:postgrespassword@localhost:5433/bizdesk` |
-| `NEXTAUTH_SECRET` | Secret key for JWT session encryption | `bizdesk-crm-super-secret-jwt-key-2026-safe` |
-| `NEXTAUTH_URL` | Canonical app URL | `http://localhost:3000` |
-| `GOOGLE_CLIENT_ID` | Google OAuth Client ID | `your-google-client-id` |
-| `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | `your-google-client-secret` |
-| `RESEND_API_KEY` | Resend API key for email delivery | `re_your_api_key` |
-| `EMAIL_FROM` | Default sender email address | `invoicing@bizdesk.co.ke` |
-| `STRIPE_SECRET_KEY` | Stripe secret key for subscriptions | `sk_test_...` |
-| `STRIPE_WEBHOOK_SECRET` | Stripe webhook verification secret | `whsec_...` |
+| Variable                | Description                           | Default / Example                                               |
+| :---------------------- | :------------------------------------ | :-------------------------------------------------------------- |
+| `DATABASE_URL`          | PostgreSQL connection string          | `postgresql://postgres:postgrespassword@localhost:5433/bizdesk` |
+| `NEXTAUTH_SECRET`       | Secret key for JWT session encryption | `bizdesk-crm-super-secret-jwt-key-2026-safe`                    |
+| `NEXTAUTH_URL`          | Canonical app URL                     | `http://localhost:3000`                                         |
+| `GOOGLE_CLIENT_ID`      | Google OAuth Client ID                | `your-google-client-id`                                         |
+| `GOOGLE_CLIENT_SECRET`  | Google OAuth Client Secret            | `your-google-client-secret`                                     |
+| `RESEND_API_KEY`        | Resend API key for email delivery     | `re_your_api_key`                                               |
+| `EMAIL_FROM`            | Default sender email address          | `invoicing@bizdesk.co.ke`                                       |
+| `STRIPE_SECRET_KEY`     | Stripe secret key for subscriptions   | `sk_test_...`                                                   |
+| `STRIPE_WEBHOOK_SECRET` | Stripe webhook verification secret    | `whsec_...`                                                     |
 
 ---
 
