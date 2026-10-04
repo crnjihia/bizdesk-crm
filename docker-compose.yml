@@ -3,12 +3,12 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: biashara-postgres
+    container_name: bizdesk-postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: biashara
+      POSTGRES_DB: bizdesk
     ports:
       - '5432:5432'
     volumes:

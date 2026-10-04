@@ -116,7 +116,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 | Variable | Description | Example |
 | :--- | :--- | :--- |
-| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@localhost:5433/biashara` |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@localhost:5433/bizdesk` |
 | `NEXTAUTH_SECRET` | Secret key for JWT encryption | `openssl rand -base64 32` |
 | `NEXTAUTH_URL` | Canonical app URL | `http://localhost:3000` |
 | `GOOGLE_CLIENT_ID` | Google OAuth Client ID | `your-google-client-id` |
