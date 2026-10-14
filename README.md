@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="https://crnjihia.github.io/bizdesk-crm/"><img src="https://img.shields.io/badge/GitHub_Pages-Live_Showcase-059669?logo=github&logoColor=white" alt="GitHub Pages Live Demo" /></a>
   <a href="https://github.com/crnjihia/bizdesk-crm/actions/workflows/ci.yml"><img src="https://github.com/crnjihia/bizdesk-crm/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
   <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-14_App_Router-black?logo=next.js" alt="Next.js 14" /></a>
   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript" alt="TypeScript" /></a>
@@ -21,6 +22,8 @@
 ---
 
 ## 🌟 Overview
+
+> 🌐 **Interactive Documentation & Live Simulator**: Explore the live architecture, M-Pesa reconciler, and multi-tenancy inspector at **[crnjihia.github.io/bizdesk-crm](https://crnjihia.github.io/bizdesk-crm/)**.
 
 **BizDesk CRM** is an all-in-one financial operating system tailored to the specific business workflows of Kenyan SMEs. From issuing professional tax invoices and reconciling M-Pesa mobile payments to managing client directories and scaling teams, BizDesk CRM brings enterprise-grade cloud capabilities with local market compatibility.
 

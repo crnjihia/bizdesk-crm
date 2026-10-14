@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizDesk CRM 🇰🇪 | Multi-Tenant CRM & Invoicing Platform for Kenyan Enterprises</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Production-grade multi-tenant CRM and financial invoicing platform for Kenyan SMEs with automated M-Pesa reconciliation, KRA tax compliance, and strict Prisma database isolation.">
+  <meta name="keywords" content="BizDesk CRM, Kenyan CRM, M-Pesa invoicing, Next.js 14, Multi-tenant, Prisma ORM, KRA VAT, Kenyan SMEs, Safaricom Daraja">
+  <meta name="author" content="Christopher Njihia (crnjihia)">
+  
+  <meta property="og:title" content="BizDesk CRM 🇰🇪 | Multi-Tenant CRM & Invoicing Platform">
+  <meta property="og:description" content="Production-grade financial operating system for Kenyan SMEs with M-Pesa reconciliation, strict tenant isolation, and KRA tax invoicing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crnjihia.github.io/bizdesk-crm/">
+  <meta property="og:image" content="images/dashboard-preview.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Atmospheric Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-group">
+        <img src="favicon.svg" alt="BizDesk CRM Logo" class="brand-icon">
+        <div class="brand-name">
+          BizDesk<span>CRM</span> <span style="font-size: 1rem;">🇰🇪</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#overview" class="nav-link">Overview</a></li>
+        <li><a href="#interactive-simulator" class="nav-link">Interactive Demos</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#rbac" class="nav-link">RBAC</a></li>
+        <li><a href="#quickstart" class="nav-link">Quickstart</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <span class="badge badge-emerald">
+          <span class="badge-dot"></span> v0.1.0 Ready
+        </span>
+        <a href="https://github.com/crnjihia/bizdesk-crm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-tag">
+          <span class="badge badge-cyan">
+            <span class="badge-dot"></span> Next.js 14 App Router &bull; Prisma &bull; PostgreSQL
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Financial Operating System for <br>
+          <span class="gradient-text">Kenyan SMEs & African Enterprises</span>
+        </h1>
+
+        <p class="hero-description">
+          Engineered for local market reality: strict database-level multi-tenancy isolation via <code>AsyncLocalStorage</code>, 
+          automated <strong>16% KRA VAT</strong> invoicing, instant <strong>M-Pesa reference reconciliation</strong>, 
+          and multi-tier <strong>Stripe billing</strong>.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#interactive-simulator" class="btn btn-primary">
+            Launch Interactive Demos &rarr;
+          </a>
+          <a href="#architecture" class="btn btn-secondary">
+            Multi-Tenancy Architecture
+          </a>
+          <a href="https://github.com/crnjihia/bizdesk-crm" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            View Source Code
+          </a>
+        </div>
+
+        <!-- Metric HUD Ribbon -->
+        <div class="hud-ribbon">
+          <div class="hud-card">
+            <div class="hud-val text-emerald">100%</div>
+            <div class="hud-label">Tenant Isolation</div>
+            <div class="hud-sub">AsyncLocalStorage + Prisma hook</div>
+          </div>
+          <div class="hud-card">
+            <div class="hud-val text-cyan">KES 0</div>
+            <div class="hud-label">Payment Discrepancy</div>
+            <div class="hud-sub">Instant M-Pesa reference audit</div>
+          </div>
+          <div class="hud-card">
+            <div class="hud-val text-purple">16% VAT</div>
+            <div class="hud-label">KRA Compliant</div>
+            <div class="hud-sub">Automated eTIMS & tax ledger</div>
+          </div>
+          <div class="hud-card">
+            <div class="hud-val text-amber">&lt; 120ms</div>
+            <div class="hud-label">Query Latency (P95)</div>
+            <div class="hud-sub">Scoped compound index scans</div>
+          </div>
+        </div>
+
+        <!-- Live Screenshot Showcase with Lightbox Trigger -->
+        <div class="preview-showcase">
+          <div class="preview-toolbar">
+            <div class="window-controls">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="window-address">
+              <span>https://bizdesk.co.ke/org/nairobi-tech-hub/dashboard</span>
+            </div>
+            <div>
+              <span class="badge badge-emerald">
+                <span class="badge-dot"></span> Live Application View
+              </span>
+            </div>
+          </div>
+
+          <div class="preview-img-wrap" id="dashboard-preview-trigger">
+            <img src="images/dashboard-preview.png" alt="BizDesk CRM Overview Dashboard Interface">
+            <div class="preview-overlay">
+              <span class="btn btn-primary btn-sm">
+                🔍 Click to Inspect High-Res UI
+              </span>
+            </div>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+            Production interface preview showing the financial overview, client balances, M-Pesa status stream, and KES revenue metrics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section class="section" id="interactive-simulator" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Interactive Simulator Suite</span>
+          <h2 class="section-title">Explore BizDesk CRM Core Modules</h2>
+          <p class="section-desc">
+            Interact with live simulations of our invoicing engine, tenant isolation boundaries, RBAC permissions, and KRA tax calculation.
+          </p>
+        </div>
+
+        <div class="tab-container">
+          <!-- Main Tabs Navigation -->
+          <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="tab-invoicing">
+              📄 M-Pesa Invoicing & Reconciler
+            </button>
+            <button class="tab-btn" data-tab="tab-multitenant">
+              🛡️ Zero-Trust Multi-Tenancy
+            </button>
+            <button class="tab-btn" data-tab="tab-rbac">
+              👥 RBAC Permissions Tester
+            </button>
+            <button class="tab-btn" data-tab="tab-tax">
+              🇰🇪 KRA VAT & eTIMS Calculator
+            </button>
+            <button class="tab-btn" data-tab="tab-schema">
+              💾 Prisma Schema & Models
+            </button>
+          </div>
+
+          <!-- Tab 1: M-Pesa Invoicing & Reconciler -->
+          <div class="tab-pane active" id="tab-invoicing">
+            <div class="app-simulator">
+              <div class="simulator-header">
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">
+                    Kenyan SME Invoice Generator & M-Pesa Reconciler
+                  </h3>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">
+                    Select a client, inspect line totals with 16% VAT, and simulate real-time Daraja M-Pesa receipt verification.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn btn-outline btn-sm" id="rec-btn-reset">Reset Demo</button>
+                </div>
+              </div>
+
+              <div class="simulator-body">
+                <div class="reconcile-grid">
+                  <!-- Control Column -->
+                  <div class="reconcile-controls">
+                    <div class="form-group">
+                      <label class="form-label" for="rec-client-select">Select Billed Client</label>
+                      <select class="form-select" id="rec-client-select">
+                        <option value="safari-logistics">Safari Logistics Ltd (Nairobi)</option>
+                        <option value="mombasa-fresh">Mombasa Fresh Grocers Ltd (Mombasa)</option>
+                        <option value="kilimani-design">Kilimani Design Studio (Kilimani)</option>
+                        <option value="rift-agri">Rift Valley Agribusiness Co. (Nakuru)</option>
+                      </select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                      <div class="form-group">
+                        <label class="form-label">Invoice Reference</label>
+                        <input type="text" class="form-input" id="rec-inv-number" value="INV-2026-0042" readonly style="font-family: var(--font-mono);">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Payment Currency</label>
+                        <input type="text" class="form-input" value="KES (Kenyan Shilling)" readonly style="font-weight: 600; color: #34d399;">
+                      </div>
+                    </div>
+
+                    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1.25rem;">
+                      <h4 style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #22c55e;">📱</span> M-Pesa Payment Reconciliation
+                      </h4>
+                      <p style="font-size: 0.775rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                        Enter the customer's 10-character Safaricom M-Pesa transaction reference code:
+                      </p>
+                      <div class="form-group">
+                        <input type="text" class="form-input" id="rec-mpesa-code" placeholder="e.g. QHD829142K" value="QHD829142K" style="font-family: var(--font-mono); font-size: 1rem; text-transform: uppercase;">
+                      </div>
+                      <button class="btn btn-primary" id="rec-btn-reconcile" style="width: 100%;">
+                        ⚡ Reconcile M-Pesa Payment
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Invoice Document Preview -->
+                  <div class="invoice-preview-card">
+                    <div class="inv-header">
+                      <div>
+                        <div class="inv-logo-title">BizDesk CRM</div>
+                        <div style="font-size: 0.75rem; color: #64748b;">Nairobi Tech Hub Ltd &bull; PIN: P051239871Z</div>
+                      </div>
+                      <div style="text-align: right;">
+                        <span class="inv-status-stamp stamp-sent" id="rec-status-badge">PENDING PAYMENT</span>
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; margin-top: 0.35rem;">INV-2026-0042</div>
+                      </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-size: 0.8rem;">
+                      <div>
+                        <div style="font-weight: 700; color: #475569; text-transform: uppercase; font-size: 0.7rem;">Billed To:</div>
+                        <div style="font-weight: 700; color: #0f172a; font-size: 0.9rem;" id="rec-preview-client-name">Safari Logistics Ltd</div>
+                        <div id="rec-preview-client-email" style="color: #64748b;">billing@safarilogistics.co.ke</div>
+                        <div id="rec-preview-client-phone" style="color: #64748b;">+254 712 345 678</div>
+                      </div>
+                      <div style="text-align: right;">
+                        <div style="font-weight: 700; color: #475569; text-transform: uppercase; font-size: 0.7rem;">Invoice Details:</div>
+                        <div>Date: <span style="font-weight: 600;">14 Oct 2026</span></div>
+                        <div>Due: <span style="font-weight: 600;">28 Oct 2026</span></div>
+                        <div>KRA VAT: <span style="font-weight: 600;">16.0% Inclusive</span></div>
+                      </div>
+                    </div>
+
+                    <table class="inv-table">
+                      <thead>
+                        <tr>
+                          <th>Service Description</th>
+                          <th style="text-align: center;">Qty</th>
+                          <th style="text-align: right;">Rate (KES)</th>
+                          <th style="text-align: right;">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody id="rec-table-body">
+                        <!-- Populated dynamically via JS -->
+                      </tbody>
+                    </table>
+
+                    <div style="margin-left: auto; width: 240px; font-size: 0.85rem; line-height: 1.6;">
+                      <div style="display: flex; justify-content: space-between; color: #64748b;">
+                        <span>Subtotal:</span>
+                        <span id="rec-subtotal" style="font-family: var(--font-mono); font-weight: 600;">KES 70,000</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; color: #64748b;">
+                        <span>KRA VAT (16%):</span>
+                        <span id="rec-vat" style="font-family: var(--font-mono); font-weight: 600;">KES 11,200</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1rem; color: #0f172a; border-top: 1.5px solid #cbd5e1; padding-top: 0.5rem; margin-top: 0.5rem;">
+                        <span>Total Due:</span>
+                        <span id="rec-grandtotal" style="font-family: var(--font-mono); color: #059669;">KES 81,200</span>
+                      </div>
+                    </div>
+
+                    <div id="rec-mpesa-banner" style="display: none;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Zero-Trust Multi-Tenancy -->
+          <div class="tab-pane" id="tab-multitenant">
+            <div class="app-simulator">
+              <div class="simulator-header">
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">
+                    Multi-Tenancy Boundary Isolation Inspector
+                  </h3>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">
+                    Switch between organizations to observe how <code>tenantContext</code> and Prisma Middleware automatically scope all DB operations.
+                  </p>
+                </div>
+                <div>
+                  <button class="btn btn-rose btn-sm" id="tenant-test-breach-btn" style="background: rgba(244,63,94,0.15); border: 1px solid rgba(244,63,94,0.3); color: #fb7185;">
+                    ⚔️ Test Cross-Tenant Attack
+                  </button>
+                </div>
+              </div>
+
+              <div class="simulator-body">
+                <div class="tenant-inspector">
+                  <!-- Selector Column -->
+                  <div class="tenant-selector-panel">
+                    <h4 style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                      Active Tenant Context
+                    </h4>
+
+                    <div class="tenant-pill selected" data-org="nairobi-tech-hub">
+                      <div>
+                        <div style="font-weight: 600; color: var(--text-primary);">Nairobi Tech Hub Ltd</div>
+                        <div style="font-size: 0.725rem; color: var(--text-muted); font-family: var(--font-mono);">slug: nairobi-tech-hub</div>
+                      </div>
+                      <span class="badge badge-emerald">Pro</span>
+                    </div>
+
+                    <div class="tenant-pill" data-org="mombasa-logistics">
+                      <div>
+                        <div style="font-weight: 600; color: var(--text-primary);">Mombasa Coastal Logistics</div>
+                        <div style="font-size: 0.725rem; color: var(--text-muted); font-family: var(--font-mono);">slug: mombasa-logistics</div>
+                      </div>
+                      <span class="badge badge-purple">Enterprise</span>
+                    </div>
+
+                    <div class="tenant-pill" data-org="rift-valley-agri">
+                      <div>
+                        <div style="font-weight: 600; color: var(--text-primary);">Rift Valley Fresh Agri</div>
+                        <div style="font-size: 0.725rem; color: var(--text-muted); font-family: var(--font-mono);">slug: rift-valley-agri</div>
+                      </div>
+                      <span class="badge badge-cyan">Starter</span>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 0.775rem;">
+                      <div style="color: var(--text-secondary); margin-bottom: 0.35rem;">Active Tenant ID:</div>
+                      <div style="font-family: var(--font-mono); color: #38bdf8; font-weight: 600;" id="tenant-disp-slug">nairobi-tech-hub</div>
+                      <div style="color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0.35rem;">Active Plan:</div>
+                      <div style="font-weight: 600; color: #34d399;" id="tenant-disp-plan">Pro Plan (KES 6,500/mo)</div>
+                    </div>
+                  </div>
+
+                  <!-- Query Inspector Output -->
+                  <div>
+                    <div id="tenant-breach-result" style="display: none; margin-bottom: 1rem;"></div>
+
+                    <div class="code-box">
+                      <div class="code-header">
+                        <span>Database Query Rewriter (Prisma Client Middleware)</span>
+                        <span class="badge badge-emerald">Hard Isolation Active</span>
+                      </div>
+                      <pre class="code-content" id="tenant-sql-output">
+<span class="token-comment">-- Prisma Middleware automatically rewriting query for tenant: org_clx9821a001</span>
+<span class="token-keyword">SELECT</span> i.id, i.number, i.total, i.status, i.mpesa_ref
+<span class="token-keyword">FROM</span> <span class="token-string">"Invoice"</span> i
+<span class="token-keyword">WHERE</span> i.<span class="token-type">organization_id</span> = <span class="token-string">'org_clx9821a001'</span>
+  <span class="token-keyword">AND</span> i.status = <span class="token-string">'paid'</span>
+<span class="token-keyword">ORDER BY</span> i.created_at <span class="token-keyword">DESC</span>
+<span class="token-keyword">LIMIT</span> <span class="token-number">50</span>;</pre>
+                    </div>
+
+                    <div style="margin-top: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: 8px;">
+                        <div style="font-weight: 700; font-size: 0.85rem; color: #34d399; margin-bottom: 0.35rem;">
+                          🔒 AsyncLocalStorage Context
+                        </div>
+                        <p style="font-size: 0.775rem; color: var(--text-secondary);">
+                          Every incoming web request wraps the server action with <code>tenantContext.run(orgId, cb)</code>. Child services cannot bypass the tenant scope.
+                        </p>
+                      </div>
+                      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 1rem; border-radius: 8px;">
+                        <div style="font-weight: 700; font-size: 0.85rem; color: #38bdf8; margin-bottom: 0.35rem;">
+                          🛡️ Traversal Leak Proof
+                        </div>
+                        <p style="font-size: 0.775rem; color: var(--text-secondary);">
+                          Direct queries by primary key (<code>findUnique</code>) are rewritten into <code>findFirst</code> with <code>organizationId</code> filter to eliminate IDOR vulnerabilities.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: RBAC Permissions Tester -->
+          <div class="tab-pane" id="tab-rbac">
+            <div class="app-simulator">
+              <div class="simulator-header">
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">
+                    Role-Based Access Control (RBAC) Simulator
+                  </h3>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">
+                    Test permissions across roles and inspect Server Action authorization guards.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="btn btn-secondary btn-sm rbac-role-btn active" data-role="owner">Owner</button>
+                  <button class="btn btn-secondary btn-sm rbac-role-btn" data-role="admin">Admin</button>
+                  <button class="btn btn-secondary btn-sm rbac-role-btn" data-role="member">Member</button>
+                </div>
+              </div>
+
+              <div class="simulator-body">
+                <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem;">
+                  <div class="rbac-table-wrap">
+                    <table class="rbac-table">
+                      <thead>
+                        <tr>
+                          <th>CRM Operation</th>
+                          <th>Scope</th>
+                          <th>Permission State</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>View Financial Dashboards</strong></td>
+                          <td><code>/org/[slug]/dashboard</code></td>
+                          <td data-perm="viewDashboard"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Manage Clients (CRUD)</strong></td>
+                          <td><code>/org/[slug]/clients</code></td>
+                          <td data-perm="manageClients"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Generate & Send Tax Invoices</strong></td>
+                          <td><code>/org/[slug]/invoices/new</code></td>
+                          <td data-perm="createInvoice"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Reconcile M-Pesa References</strong></td>
+                          <td><code>/api/invoices/reconcile</code></td>
+                          <td data-perm="reconcileMpesa"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Manage Team & Invite Members</strong></td>
+                          <td><code>/org/[slug]/team</code></td>
+                          <td data-perm="manageTeam"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Modify Stripe Billing Tier</strong></td>
+                          <td><code>/org/[slug]/billing</code></td>
+                          <td data-perm="billingConfig"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>Delete Organization Ledger</strong></td>
+                          <td><code>/org/[slug]/settings</code></td>
+                          <td data-perm="deleteOrg"><span class="badge badge-emerald"><span class="badge-dot"></span> Allowed</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div>
+                    <h4 style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem;">
+                      Server Action Authorization Guard: <span id="rbac-active-role" style="color: #38bdf8;">Owner</span>
+                    </h4>
+                    <div class="code-box">
+                      <div class="code-header">
+                        <span>src/server/auth-guards.ts</span>
+                        <span class="badge badge-cyan">TypeScript</span>
+                      </div>
+                      <pre class="code-content" id="rbac-guard-code" style="min-height: 180px;">
+<span class="token-comment">// Server Action Guard: Full Access Granted</span>
+<span class="token-keyword">await</span> <span class="token-function">requireRole</span>([<span class="token-string">'owner'</span>]);
+<span class="token-comment">// Allows destructive mutations & billing administration</span></pre>
+                    </div>
+
+                    <div style="margin-top: 1rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); padding: 1rem; border-radius: 8px;">
+                      <div style="font-weight: 700; font-size: 0.8rem; color: #34d399; margin-bottom: 0.25rem;">
+                        Audit Log Verification
+                      </div>
+                      <p style="font-size: 0.75rem; color: var(--text-secondary);">
+                        Every privileged action records actor user ID, tenant ID, action timestamp, and client IP into the immutable <code>ActivityLog</code> ledger.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: KRA VAT & eTIMS Calculator -->
+          <div class="tab-pane" id="tab-tax">
+            <div class="app-simulator">
+              <div class="simulator-header">
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">
+                    Kenyan Tax Invoicing & eTIMS Calculator
+                  </h3>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">
+                    Compute standard 16% Value Added Tax and Withholding Tax (WHT) deductions for Kenyan business compliance.
+                  </p>
+                </div>
+                <span class="badge badge-emerald">KRA Compatible</span>
+              </div>
+
+              <div class="simulator-body">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                  <div>
+                    <div class="form-group">
+                      <label class="form-label" for="tax-amount">Gross Service Fee (KES)</label>
+                      <input type="number" class="form-input" id="tax-amount" value="150000" style="font-size: 1.1rem; font-weight: 700; font-family: var(--font-mono);">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="tax-vat-rate">Value Added Tax (VAT)</label>
+                      <select class="form-select" id="tax-vat-rate">
+                        <option value="0.16">Standard Rate: 16% VAT</option>
+                        <option value="0.0">Zero-Rated / Exempt: 0% VAT</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="tax-wht-rate">Withholding Tax (WHT Deducted at Source)</label>
+                      <select class="form-select" id="tax-wht-rate">
+                        <option value="0.05">Professional / Management Fees (5% WHT)</option>
+                        <option value="0.02">Contractual Technical Services (2% WHT)</option>
+                        <option value="0.0">No WHT Withheld (0%)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+                      Disbursement & Tax Breakdown
+                    </h4>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                      <span style="color: var(--text-secondary); font-size: 0.85rem;">Base Subtotal:</span>
+                      <span style="font-family: var(--font-mono); font-weight: 600;" id="tax-out-subtotal">KES 150,000.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                      <span style="color: var(--text-secondary); font-size: 0.85rem;">KRA VAT (16%):</span>
+                      <span style="font-family: var(--font-mono); font-weight: 600; color: #38bdf8;" id="tax-out-vat">KES 24,000.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.75rem;">
+                      <span style="font-weight: 700; font-size: 0.9rem;">Invoice Total (KES):</span>
+                      <span style="font-family: var(--font-mono); font-weight: 700; color: var(--text-primary);" id="tax-out-gross">KES 174,000.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+                      <span style="color: var(--text-secondary); font-size: 0.85rem;">Withholding Tax (WHT):</span>
+                      <span style="font-family: var(--font-mono); font-weight: 600; color: #f43f5e;" id="tax-out-wht">- KES 7,500.00</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; border-top: 2px solid var(--border-subtle); padding-top: 0.75rem; margin-top: 0.5rem;">
+                      <span style="font-weight: 800; font-size: 1rem; color: #34d399;">Net Bank/M-Pesa Wire:</span>
+                      <span style="font-family: var(--font-mono); font-weight: 800; font-size: 1.15rem; color: #34d399;" id="tax-out-net">KES 166,500.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Prisma Schema & Models -->
+          <div class="tab-pane" id="tab-schema">
+            <div class="app-simulator">
+              <div class="simulator-header">
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">
+                    Production Database Schema (Prisma ORM)
+                  </h3>
+                  <p style="font-size: 0.8rem; color: var(--text-muted);">
+                    Compound unique constraints, relational cascaded foreign keys, and organization scoping indexes.
+                  </p>
+                </div>
+                <button class="btn btn-secondary btn-sm" data-copy="npx prisma db push">
+                  Copy Prisma CLI
+                </button>
+              </div>
+
+              <div class="simulator-body">
+                <div class="code-box">
+                  <div class="code-header">
+                    <span>prisma/schema.prisma</span>
+                    <span class="badge badge-purple">PostgreSQL</span>
+                  </div>
+                  <pre class="code-content">
+<span class="token-keyword">model</span> <span class="token-type">Organization</span> {
+  id                   <span class="token-keyword">String</span>        @id @default(cuid())
+  name                 <span class="token-keyword">String</span>
+  slug                 <span class="token-keyword">String</span>        @unique
+  stripeCustomerId     <span class="token-keyword">String</span>?
+  stripeSubscriptionId <span class="token-keyword">String</span>?
+  plan                 <span class="token-keyword">String</span>        @default(<span class="token-string">"free"</span>)
+  createdAt            <span class="token-keyword">DateTime</span>      @default(now())
+
+  memberships          Membership[]
+  clients              Client[]
+  invoices             Invoice[]
+  activityLogs         ActivityLog[]
+}
+
+<span class="token-keyword">model</span> <span class="token-type">Invoice</span> {
+  id             <span class="token-keyword">String</span>        @id @default(cuid())
+  organizationId <span class="token-keyword">String</span>
+  clientId       <span class="token-keyword">String</span>
+  number         <span class="token-keyword">String</span>
+  status         InvoiceStatus @default(draft)
+  issueDate      <span class="token-keyword">DateTime</span>      @default(now())
+  dueDate        <span class="token-keyword">DateTime</span>
+  currency       <span class="token-keyword">String</span>        @default(<span class="token-string">"KES"</span>)
+  total          <span class="token-keyword">Decimal</span>       @default(0)
+  mpesaRef       <span class="token-keyword">String</span>?
+  createdAt      <span class="token-keyword">DateTime</span>      @default(now())
+
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  client         Client        @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  lines          InvoiceLine[]
+  payments       Payment[]
+
+  @@unique([organizationId, number])
+  @@index([organizationId])
+  @@index([clientId])
+  @@index([status])
+}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="section" id="architecture" style="padding: 4rem 0; background: rgba(12, 18, 30, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Enterprise Topology</span>
+          <h2 class="section-title">Zero-Trust Multi-Tenant Architecture</h2>
+          <p class="section-desc">
+            How BizDesk CRM routes, authenticates, scopes, and reconciles financial data from client request to database query.
+          </p>
+        </div>
+
+        <div class="arch-flow-box">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; text-align: center;">
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">💻</div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: #34d399; margin-bottom: 0.35rem;">1. Client / App Router</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                Next.js 14 App Router (<code>/org/[slug]/*</code>). Server Actions with optimistic UI states and toast triggers.
+              </p>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.35rem;">2. RBAC & Tenant Context</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                Node <code>AsyncLocalStorage</code> wraps the request. <code>requireRole(['owner', 'admin'])</code> enforces member privileges.
+              </p>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: #818cf8; margin-bottom: 0.35rem;">3. Prisma Middleware</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                Automatically intercepts queries, injecting <code>where: { organizationId }</code> to prevent cross-tenant traversal leaks.
+              </p>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏦</div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.35rem;">4. PostgreSQL & Gateways</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                PostgreSQL with compound indices, Safaricom Daraja M-Pesa webhooks, Stripe billing, and Resend email delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Features Grid -->
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">🇰🇪</div>
+            <h3 class="feature-title">M-Pesa Reconciliation Engine</h3>
+            <p class="feature-text">
+              Directly integrates with Safaricom Daraja STK Push and C2B transaction references. Auto-updates invoice status from Pending to Paid with zero manual data entry.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8;">🛡️</div>
+            <h3 class="feature-title">Hard Multi-Tenancy Isolation</h3>
+            <p class="feature-text">
+              Zero-trust database isolation using Prisma ORM middleware and AsyncLocalStorage. Completely prevents cross-organization leaks even under adversarial queries.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">📄</div>
+            <h3 class="feature-title">Instant Tax PDF Dispatch</h3>
+            <p class="feature-text">
+              High-fidelity PDF invoice rendering powered by <code>@react-pdf/renderer</code> with KRA PIN, 16% VAT breakdown, and direct Resend email delivery.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">💳</div>
+            <h3 class="feature-title">Stripe Subscription Metering</h3>
+            <p class="feature-text">
+              Tiered SaaS plans (Starter, Pro, Enterprise) with hard quotas for active clients, monthly invoices, and team seats with idempotent webhook ingestion.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">👥</div>
+            <h3 class="feature-title">Role-Based Access Control (RBAC)</h3>
+            <p class="feature-text">
+              Organization-level roles (Owner, Admin, Member) with declarative server action guards, preventing unauthorized invoice edits or team modifications.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(244, 63, 94, 0.15); color: #fb7185;">📊</div>
+            <h3 class="feature-title">Audit Ledger & CSV Export</h3>
+            <p class="feature-text">
+              Detailed audit trail tracking all state mutations with actor ID and IP, plus one-click CSV export ready for Kenya Revenue Authority (KRA) filing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart Section -->
+    <section class="section" id="quickstart" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Local Development</span>
+          <h2 class="section-title">Get Started in 4 Steps</h2>
+          <p class="section-desc">
+            Spin up the PostgreSQL database via Docker Compose, apply Prisma migrations, and run the Next.js development server.
+          </p>
+        </div>
+
+        <div class="quickstart-steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                Clone Repository & Install Dependencies
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                Ensure Node.js 20+ is installed on your workstation.
+              </p>
+              <div class="code-box">
+                <div class="code-header">
+                  <span>Terminal</span>
+                  <button class="btn btn-secondary btn-sm" data-copy="git clone https://github.com/crnjihia/bizdesk-crm.git && cd bizdesk-crm && npm install">
+                    Copy
+                  </button>
+                </div>
+                <pre class="code-content">git clone https://github.com/crnjihia/bizdesk-crm.git
+cd bizdesk-crm
+npm install</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                Configure Environment & Start PostgreSQL
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                Copy <code>.env.example</code> to <code>.env</code> and boot the PostgreSQL container.
+              </p>
+              <div class="code-box">
+                <div class="code-header">
+                  <span>Terminal</span>
+                  <button class="btn btn-secondary btn-sm" data-copy="cp .env.example .env && docker-compose up -d">
+                    Copy
+                  </button>
+                </div>
+                <pre class="code-content">cp .env.example .env
+docker-compose up -d</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                Run Prisma Migrations & Seed Demo Kenyan Data
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                Generates the Prisma client, pushes database schema, and seeds realistic Kenyan SMEs and M-Pesa invoices.
+              </p>
+              <div class="code-box">
+                <div class="code-header">
+                  <span>Terminal</span>
+                  <button class="btn btn-secondary btn-sm" data-copy="npx prisma generate && npx prisma db push && npm run seed">
+                    Copy
+                  </button>
+                </div>
+                <pre class="code-content">npx prisma generate
+npx prisma db push
+npm run seed</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <div>
+              <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+                Start Dev Server
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                Navigate to <code>http://localhost:3000</code> to access the live CRM interface.
+              </p>
+              <div class="code-box">
+                <div class="code-header">
+                  <span>Terminal</span>
+                  <button class="btn btn-secondary btn-sm" data-copy="npm run dev">
+                    Copy
+                  </button>
+                </div>
+                <pre class="code-content">npm run dev</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal for Full UI Preview -->
+  <div class="modal-overlay" id="lightbox-modal">
+    <div class="modal-dialog">
+      <button class="modal-close" id="lightbox-close" aria-label="Close dialog">&times;</button>
+      <img src="images/dashboard-preview.png" alt="BizDesk CRM Full Interface View">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-name" style="margin-bottom: 0.75rem;">
+            BizDesk<span>CRM</span> 🇰🇪
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; max-width: 320px;">
+            Production-grade multi-tenant CRM and financial invoicing platform for Kenyan SMEs & African Enterprises.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Architecture</h5>
+          <ul class="footer-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#interactive-simulator">M-Pesa Reconciler</a></li>
+            <li><a href="#interactive-simulator">Prisma Tenant Scoping</a></li>
+            <li><a href="#rbac">RBAC Authorization</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Ecosystem</h5>
+          <ul class="footer-links">
+            <li><a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js 14</a></li>
+            <li><a href="https://www.prisma.io/" target="_blank" rel="noopener noreferrer">Prisma ORM</a></li>
+            <li><a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">Stripe Billing</a></li>
+            <li><a href="https://developer.safaricom.co.ke/" target="_blank" rel="noopener noreferrer">Safaricom Daraja</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-heading">Repository</h5>
+          <ul class="footer-links">
+            <li><a href="https://github.com/crnjihia/bizdesk-crm" target="_blank" rel="noopener noreferrer">GitHub Source</a></li>
+            <li><a href="https://github.com/crnjihia/bizdesk-crm/issues" target="_blank" rel="noopener noreferrer">Issue Tracker</a></li>
+            <li><a href="https://github.com/crnjihia/bizdesk-crm/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a></li>
+            <li><a href="https://github.com/crnjihia/bizdesk-crm/actions" target="_blank" rel="noopener noreferrer">Actions CI/CD</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Christopher Njihia (<a href="https://github.com/crnjihia" target="_blank" rel="noopener noreferrer" style="color: #34d399; text-decoration: none;">@crnjihia</a>). Released under the MIT License.
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span class="badge badge-emerald">Built for Kenyan SMEs 🇰🇪</span>
+          <span class="badge badge-cyan">Hosted on GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

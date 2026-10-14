@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="primaryGrad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#059669"/>
+      <stop offset="0.5" stop-color="#0284c7"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Rect -->
+  <rect width="32" height="32" rx="8" fill="#090d16"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#1e293b"/>
+  <!-- CRM Desk / Ledger Hexagon -->
+  <path d="M16 6L26 12V20L16 26L6 20V12L16 6Z" stroke="url(#primaryGrad)" stroke-width="2" stroke-linejoin="round" fill="#0f172a" fill-opacity="0.8"/>
+  <!-- Internal Circuit / Growth Bars -->
+  <path d="M12 18V15" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 18V13" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 18V11" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+  <!-- Shilling / Kenyan Accent dot -->
+  <circle cx="23" cy="8" r="3" fill="url(#badgeGrad)"/>
+  <circle cx="23" cy="8" r="1.2" fill="#ffffff"/>
+</svg>
