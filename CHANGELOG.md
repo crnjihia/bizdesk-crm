@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Initial Release
 
-We are excited to announce the initial release of **BizDesk CRM** (v0.1.0) — a production-grade multi-tenant CRM and financial invoicing platform designed for Kenyan SMEs and African growing businesses.
+I am excited to announce the initial release of **BizDesk CRM** (v0.1.0) — a production-grade multi-tenant CRM and financial invoicing platform designed for Kenyan SMEs and African growing businesses.
 
 ### Features
 - **Multi-Tenancy & Tenant Isolation**:
