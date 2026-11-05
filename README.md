@@ -1,4 +1,4 @@
-# BizDesk CRM 🇰🇪
+# BizDesk CRM
 
 <p align="center">
   <img src="docs/images/dashboard-preview.png" alt="BizDesk CRM Overview Dashboard" width="100%" />
